@@ -1,0 +1,10 @@
+server:
+  port: 8088
+
+http-client:
+  maxTotal: 500
+  maxPerRoute: 200
+  connectionRequestTimeout: 500
+  connectTimeout: 1000
+  socketTimeout: 2000
+  retryTimes: 3
