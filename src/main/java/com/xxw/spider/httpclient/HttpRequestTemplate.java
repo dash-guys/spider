@@ -42,14 +42,13 @@ public class HttpRequestTemplate {
     /**
      * 以Get方式，请求资源或服务
      *
-     * @param client				client对象
      * @param url					资源地址
      * @param headers			请求头信息
      * @param context			http上下文，用于cookie操作
      * @param encoding		编码
      * @return						返回处理结果
      */
-    public  String get(HttpClient client, String url, Header[] headers, HttpContext context, String encoding) throws HttpProcessException {
+    public  String get(String url, Header[] headers, HttpContext context, String encoding) throws HttpProcessException {
         return get(HttpRequestConfig.custom().url(url).headers(headers).context(context).encoding(encoding));
     }
     /**
@@ -65,7 +64,6 @@ public class HttpRequestTemplate {
     /**
      * 以Post方式，请求资源或服务
      *
-     * @param client		client对象
      * @param url			资源地址
      * @param headers		请求头信息
      * @param parasMap		请求参数
@@ -73,7 +71,7 @@ public class HttpRequestTemplate {
      * @param encoding		编码
      * @return				返回处理结果
      */
-    public  String post(HttpClient client, String url, Header[] headers, Map<String,Object> parasMap, HttpContext context, String encoding) throws HttpProcessException {
+    public  String post(String url, Header[] headers, Map<String,Object> parasMap, HttpContext context, String encoding) throws HttpProcessException {
         return post(HttpRequestConfig.custom().url(url).headers(headers).map(parasMap).context(context).encoding(encoding));
     }
     /**
@@ -89,7 +87,7 @@ public class HttpRequestTemplate {
     /**
      * 以Put方式，请求资源或服务
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param parasMap		请求参数
      * @param headers		请求头信息
@@ -97,7 +95,7 @@ public class HttpRequestTemplate {
      * @param encoding		编码
      * @return				返回处理结果
      */
-    public  String put(HttpClient client, String url, Map<String,Object>parasMap,Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
+    public  String put(String url, Map<String,Object>parasMap,Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
         return put(HttpRequestConfig.custom().url(url).headers(headers).map(parasMap).context(context).encoding(encoding));
     }
     /**
@@ -113,13 +111,13 @@ public class HttpRequestTemplate {
     /**
      * 以Delete方式，请求资源或服务
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作
      * @param encoding		编码
      */
-    public  String delete(HttpClient client, String url, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
+    public  String delete(String url, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
         return delete(HttpRequestConfig.custom().url(url).headers(headers).context(context).encoding(encoding));
     }
     /**
@@ -135,7 +133,7 @@ public class HttpRequestTemplate {
     /**
      * 以Patch方式，请求资源或服务
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param parasMap		请求参数
      * @param headers		请求头信息
@@ -143,7 +141,7 @@ public class HttpRequestTemplate {
      * @param encoding		编码
      * @return				返回处理结果
      */
-    public  String patch(HttpClient client, String url, Map<String,Object>parasMap, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
+    public  String patch(String url, Map<String,Object>parasMap, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
         return patch(HttpRequestConfig.custom().url(url).headers(headers).map(parasMap).context(context).encoding(encoding));
     }
     /**
@@ -159,14 +157,14 @@ public class HttpRequestTemplate {
     /**
      * 以Head方式，请求资源或服务
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作
      * @param encoding		编码
      * @return				返回处理结果
      */
-    public  String head(HttpClient client, String url, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
+    public  String head(String url, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
         return head(HttpRequestConfig.custom().url(url).headers(headers).context(context).encoding(encoding));
     }
     /**
@@ -182,14 +180,14 @@ public class HttpRequestTemplate {
     /**
      * 以Options方式，请求资源或服务
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作
      * @param encoding		编码
      * @return				返回处理结果
      */
-    public  String options(HttpClient client, String url, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
+    public  String options(String url, Header[] headers, HttpContext context,String encoding) throws HttpProcessException {
         return options(HttpRequestConfig.custom().url(url).headers(headers).context(context).encoding(encoding));
     }
     /**
@@ -205,14 +203,14 @@ public class HttpRequestTemplate {
     /**
      * 以Trace方式，请求资源或服务
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作
      * @param encoding		编码
      * @return				返回处理结果
      */
-    public  String trace(HttpClient client, String url, Header[] headers, HttpContext context, String encoding) throws HttpProcessException {
+    public  String trace(String url, Header[] headers, HttpContext context, String encoding) throws HttpProcessException {
         return trace(HttpRequestConfig.custom().url(url).headers(headers).context(context).encoding(encoding));
     }
     /**
@@ -228,14 +226,14 @@ public class HttpRequestTemplate {
     /**
      * 下载文件
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作Hh
      * @param out			输出流
      * @return				返回处理结果
      */
-    public  OutputStream down(HttpClient client, String url, Header[] headers, HttpContext context, OutputStream out) throws HttpProcessException {
+    public  OutputStream down(String url, Header[] headers, HttpContext context, OutputStream out) throws HttpProcessException {
         return down(HttpRequestConfig.custom().url(url).headers(headers).context(context).out(out));
     }
 
@@ -275,13 +273,13 @@ public class HttpRequestTemplate {
     /**
      * 上传文件
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作
      * @return				返回处理结果
      */
-    public  String upload(HttpClient client, String url, Header[] headers, HttpContext context) throws HttpProcessException {
+    public  String upload(String url, Header[] headers, HttpContext context) throws HttpProcessException {
         return upload(HttpRequestConfig.custom().url(url).headers(headers).context(context));
     }
 
@@ -301,14 +299,14 @@ public class HttpRequestTemplate {
     /**
      * 查看资源链接情况，返回状态码
      *
-     * @param client		client对象
+
      * @param url			资源地址
      * @param headers		请求头信息
      * @param context		http上下文，用于cookie操作
      * @return				返回处理结果
      * @throws HttpProcessException	http处理异常
      */
-    public  int status(HttpClient client, String url, Header[] headers, HttpContext context, HttpMethods method) throws HttpProcessException {
+    public  int status(String url, Header[] headers, HttpContext context, HttpMethods method) throws HttpProcessException {
         return status(HttpRequestConfig.custom().url(url).headers(headers).context(context).method(method));
     }
 
